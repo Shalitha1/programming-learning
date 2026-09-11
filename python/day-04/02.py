@@ -1,4 +1,9 @@
-import calculatorNew as basic_calc
+number = 38594444
 
-basic_calc.addition()
+count = 0
 
+while number > 0:
+    number = number // 10
+    count += 1
+
+print(count)
