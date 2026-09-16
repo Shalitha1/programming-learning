@@ -1,0 +1,27 @@
+def is_valid(text):
+    stack = []
+
+    pairs = {
+        ')' : '()',
+        ']' : '[',
+        '}' : '{'
+    }
+
+    for char in text:
+        if char in "([{":
+            stack.append(char)
+
+        else:
+            if len(stack) == 0:
+                return False
+
+            if stack[-1] != pairs[char]:
+                return False
+
+            stack.pop()
+
+    return len(stack) == 0
+
+print(is_valid("()[]{}"))
+print(is_valid("[]]"))
+        
