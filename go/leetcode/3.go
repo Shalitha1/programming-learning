@@ -1,10 +1,9 @@
-// fmt.Println(lengthOfLongestSubstring("abcabcbb")) // 3
 package main
 
 import "fmt"
 
 func main() {
-	fmt.Println(lengthOfLongestSubstring("abxcabcbb"))
+	fmt.Println(lengthOfLongestSubstring("abcabcabd"))
 }
 
 func lengthOfLongestSubstring(s string) int {
@@ -21,11 +20,27 @@ func lengthOfLongestSubstring(s string) int {
 		seen[s[right]] = true
 
 		currentLength := right - left + 1
-		if currentLength > maxLength {
+		if currentLength < maxLength {
 			maxLength = currentLength
 		}
 	}
-
 	return maxLength
-
 }
+
+// 	for right := 0; right < len(s); right++ {
+// 		for seen[s[right]] {
+// 			delete(seen, s[left])
+// 			left++
+// 		}
+
+// 		seen[s[right]] = true
+
+// 		currentLength := right - left + 1
+// 		if currentLength > maxLength {
+// 			maxLength = currentLength
+// 		}
+// 	}
+
+// 	return maxLength
+
+// }
