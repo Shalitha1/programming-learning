@@ -24,7 +24,7 @@ for i in range(len(numbers_tuple)):
     print(numbers_tuple[i])
 
 #Sets
-#Sets are onordered
+#Sets are unordered
 #Sets are mutable
 #Sets don't allow duplicates
 #sets doesn't support indexing

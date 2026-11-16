@@ -12,19 +12,63 @@ server_utilization = {
     "server-11": {"cpu": 62, "memory": 76},
     "server-12": {"cpu": 37, "memory": 44},
     "server-13": {"cpu": 88, "memory": 93},
-    "server-14": {"cpu": 19, "memory": 31},
+    "server-14": {"cpu": 89, "memory": 31},
     "server-15": {"cpu": 54, "memory": 61}
 }
 
-print("CPU Usage")
+# print("CPU Usage")
+# for server in server_utilization:
+#     cpuUsage = server_utilization[server]["cpu"]
+#     if cpuUsage >= 80:
+#         print(server, ":", cpuUsage)
+
+# print("Memory Usage")
+# for server in server_utilization:
+#     memoryUsage = server_utilization[server]["memory"]
+#     if memoryUsage >= 80:
+#         print(server, ":", memoryUsage)
+
+# print("High memory and CPU usages")
+# for server in server_utilization:
+#     cpuUsage = server_utilization[server]["cpu"]
+#     memoryUsage = server_utilization[server]["memory"]
+
+#     if cpuUsage >=80 and memoryUsage >= 80:
+#         print(server, "CPU usage:", cpuUsage, " Memory Usage: ", memoryUsage)
+       
+totalCPU = 0
+totalMemory = 0
+
+for server in server_utilization:
+    totalCPU += server_utilization[server]["cpu"]
+    totalMemory += server_utilization[server]["memory"]
+
+averageCPU = totalCPU / len(server_utilization)
+averageMemory = totalMemory / len(server_utilization)
+
+print("Average CPU: ", averageCPU)
+print("Average Memory: ", averageMemory)
+
+print("\n Servers above both averages: ")
+
 for server in server_utilization:
     cpuUsage = server_utilization[server]["cpu"]
-    if cpuUsage >= 80:
-        print(server, ":", cpuUsage)
-
-print("Memory Usage")
-for server in server_utilization:
     memoryUsage = server_utilization[server]["memory"]
-    if memoryUsage >= 80:
-        print(server, ":", memoryUsage)
+
+    if cpuUsage >= averageCPU and memoryUsage >= averageMemory:
+        print(server, ":", cpuUsage, ",", memoryUsage)
+
+
+#read 4
+#write 2
+#execute 1
+
+#chmod 755 12.py
+
+#df storage
+#top
+#ps
+#ps aux
+#kill
+#
 
