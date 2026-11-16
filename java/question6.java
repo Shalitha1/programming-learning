@@ -32,3 +32,4 @@ public class question6{
         myCar.speed(100);
     }
 }
+
